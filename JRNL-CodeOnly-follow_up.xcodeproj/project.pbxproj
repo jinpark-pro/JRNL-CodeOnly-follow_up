@@ -14,6 +14,7 @@
 		3C1F4F6C2BF7DCB600900A43 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3C1F4F6B2BF7DCB600900A43 /* Base */; };
 		3C1F4F742BF7E16F00900A43 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F4F732BF7E16F00900A43 /* MapViewController.swift */; };
 		3C1F4F762BF8AA1E00900A43 /* AddJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F4F752BF8AA1E00900A43 /* AddJournalViewController.swift */; };
+		3C1F4F782BF930B700900A43 /* JournalDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F4F772BF930B700900A43 /* JournalDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3C1F4F6D2BF7DCB600900A43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C1F4F732BF7E16F00900A43 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3C1F4F752BF8AA1E00900A43 /* AddJournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalViewController.swift; sourceTree = "<group>"; };
+		3C1F4F772BF930B700900A43 /* JournalDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				3C1F4F5F2BF7DCB500900A43 /* AppDelegate.swift */,
 				3C1F4F612BF7DCB500900A43 /* SceneDelegate.swift */,
 				3C1F4F632BF7DCB500900A43 /* JournalListViewController.swift */,
+				3C1F4F772BF930B700900A43 /* JournalDetailTableViewController.swift */,
 				3C1F4F752BF8AA1E00900A43 /* AddJournalViewController.swift */,
 				3C1F4F732BF7E16F00900A43 /* MapViewController.swift */,
 				3C1F4F682BF7DCB600900A43 /* Assets.xcassets */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C1F4F782BF930B700900A43 /* JournalDetailTableViewController.swift in Sources */,
 				3C1F4F642BF7DCB500900A43 /* JournalListViewController.swift in Sources */,
 				3C1F4F602BF7DCB500900A43 /* AppDelegate.swift in Sources */,
 				3C1F4F622BF7DCB500900A43 /* SceneDelegate.swift in Sources */,
