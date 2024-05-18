@@ -7,7 +7,8 @@
 
 import UIKit
 
-class JournalListViewController: UIViewController {
+class JournalListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         return tableView
@@ -15,6 +16,11 @@ class JournalListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "journalCell")
+        
         tableView.backgroundColor = .white
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -31,6 +37,16 @@ class JournalListViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addJournal))
     }
     
+    // MARK: UITableViewDataSource
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        tableView.dequeueReusableCell(withIdentifier: "journalCell", for: indexPath)
+    }
+
+    // MARK: Methods
     @objc func addJournal() {
         let addJournalViewController = AddJournalViewController()
         let navController = UINavigationController(rootViewController: addJournalViewController)
