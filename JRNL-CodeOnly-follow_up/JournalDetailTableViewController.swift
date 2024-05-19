@@ -96,6 +96,41 @@ class JournalDetailTableViewController: UITableViewController {
                 dateLabel.leadingAnchor.constraint(equalTo: marginsGuide.leadingAnchor),
                 dateLabel.trailingAnchor.constraint(equalTo: marginsGuide.trailingAnchor),
             ])
+        case 2:
+            cell.contentView.addSubview(titleLabel)
+            titleLabel.text = journalEntry.entryTitle
+            NSLayoutConstraint.activate([
+                titleLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor),
+                titleLabel.leadingAnchor.constraint(equalTo: marginsGuide.leadingAnchor),
+                titleLabel.trailingAnchor.constraint(equalTo: marginsGuide.trailingAnchor),
+            ])
+        case 3:
+            cell.contentView.addSubview(bodyTextView)
+            bodyTextView.text = journalEntry.entryBody
+            NSLayoutConstraint.activate([
+                bodyTextView.topAnchor.constraint(equalTo: marginsGuide.topAnchor),
+                bodyTextView.leadingAnchor.constraint(equalTo: marginsGuide.leadingAnchor),
+                bodyTextView.trailingAnchor.constraint(equalTo: marginsGuide.trailingAnchor),
+                bodyTextView.bottomAnchor.constraint(equalTo: marginsGuide.bottomAnchor),
+            ])
+        case 4:
+            cell.contentView.addSubview(imageView)
+            imageView.image = journalEntry.photo
+            NSLayoutConstraint.activate([
+                imageView.centerXAnchor.constraint(equalTo: cell.contentView.centerXAnchor),
+                imageView.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor),
+                imageView.widthAnchor.constraint(equalToConstant: 300),
+                imageView.heightAnchor.constraint(equalToConstant: 300),
+            ])
+        case 5:
+            cell.contentView.addSubview(mapView)
+            
+            NSLayoutConstraint.activate([
+                mapView.centerXAnchor.constraint(equalTo: cell.contentView.centerXAnchor),
+                mapView.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor),
+                mapView.widthAnchor.constraint(equalToConstant: 300),
+                mapView.heightAnchor.constraint(equalToConstant: 300),
+            ])
         default:
             print("Other")
         }
