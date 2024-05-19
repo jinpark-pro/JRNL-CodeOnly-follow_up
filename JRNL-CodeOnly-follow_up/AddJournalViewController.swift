@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol AddJournalControllerDelegate: NSObject {
+    func saveJournalEntry(_ journalEntry: JournalEntry)
+}
+
 class AddJournalViewController: UIViewController {
+    weak var delegate: AddJournalControllerDelegate?
+    
     private lazy var mainContainer: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -109,7 +115,13 @@ class AddJournalViewController: UIViewController {
     }
     
     @objc func save() {
-        
+        guard let title = titleTextField.text, !title.isEmpty,
+              let body = bodyTextView.text, !body.isEmpty else {
+            return
+        }
+        let journalEntry = JournalEntry(rating: 3, title: title, body: body, photo: UIImage(systemName: "face.smiling"))!
+        delegate?.saveJournalEntry(journalEntry)
+        dismiss(animated: true)
     }
     
     @objc func cancel() {
