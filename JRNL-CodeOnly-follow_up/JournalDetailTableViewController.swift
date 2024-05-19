@@ -85,6 +85,20 @@ class JournalDetailTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
+        let marginsGuide = cell.contentView.layoutMarginsGuide
+        
+        switch indexPath.row {
+        case 0:
+            cell.contentView.addSubview(dateLabel)
+            dateLabel.text = journalEntry.date.formatted(.dateTime.year().month().day())
+            NSLayoutConstraint.activate([
+                dateLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor),
+                dateLabel.leadingAnchor.constraint(equalTo: marginsGuide.leadingAnchor),
+                dateLabel.trailingAnchor.constraint(equalTo: marginsGuide.trailingAnchor),
+            ])
+        default:
+            print("Other")
+        }
         return cell
     }
     

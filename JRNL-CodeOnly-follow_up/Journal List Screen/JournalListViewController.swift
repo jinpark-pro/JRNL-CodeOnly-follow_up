@@ -57,8 +57,8 @@ class JournalListViewController: UIViewController, UITableViewDataSource, UITabl
 
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let jouranlEntry = sampleJournalEntryData.journalEntries[indexPath.row]
-        let journalDetailTableViewController = JournalDetailTableViewController(journalEntry: jouranlEntry)
+        let journalEntry = sampleJournalEntryData.journalEntries[indexPath.row]
+        let journalDetailTableViewController = JournalDetailTableViewController(journalEntry: journalEntry)
         show(journalDetailTableViewController, sender: self)
     }
     
