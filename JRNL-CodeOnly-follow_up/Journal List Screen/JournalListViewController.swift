@@ -18,14 +18,13 @@ class JournalListViewController: UIViewController, UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         sampleJournalEntryData.createSampleJournalEntryData()
         
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(JournalListTableViewCell.self, forCellReuseIdentifier: "journalCell")
         
-        tableView.backgroundColor = .white
+        view.backgroundColor = .white
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
