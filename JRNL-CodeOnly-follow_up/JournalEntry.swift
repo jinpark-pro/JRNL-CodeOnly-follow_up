@@ -39,6 +39,13 @@ class JournalEntry: NSObject, MKAnnotation {
         self.latitude = latitude
         self.longitude = longitude
     }
+    
+    var title: String? {
+        date.formatted(.dateTime.year().month().day())
+    }
+    var subtitle: String? {
+        entryBody
+    }
 }
 
 // MARK: - Sample Data
