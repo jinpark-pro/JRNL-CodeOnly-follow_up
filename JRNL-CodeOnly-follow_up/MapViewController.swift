@@ -25,6 +25,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         navigationItem.title = "Loading..."
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
         
         view.addSubview(mapView)
         
