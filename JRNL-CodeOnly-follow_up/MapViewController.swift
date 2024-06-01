@@ -21,12 +21,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView.addAnnotations(SharedData.shared.getAllJournalEntries())
         view.backgroundColor = .white
         navigationItem.title = "Loading..."
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
-        locationManager.requestLocation()
         
         view.addSubview(mapView)
         
@@ -38,7 +36,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             mapView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
         ])
     }
-    
+    override func viewIsAppearing(_ animated: Bool) {
+        super.viewIsAppearing(animated)
+        locationManager.requestLocation()
+    }
     // MARK: - CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let myCurrentLocation = locations.first {
@@ -47,6 +48,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             navigationItem.title = "Map"
             mapView.region = setInitialRegion(lat: lat, long: long)
+            mapView.addAnnotations(SharedData.shared.getAllJournalEntries())
         }
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
