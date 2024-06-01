@@ -12,8 +12,6 @@ import CoreLocation
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     let locationManager = CLLocationManager()
     
-    var sampleJournalEntryData = SampleJournalEntryData()
-    
     private lazy var mapView: MKMapView = {
         let mapView = MKMapView()
         mapView.delegate = self
@@ -23,10 +21,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        sampleJournalEntryData.createSampleJournalEntryData()
-        mapView.addAnnotations(sampleJournalEntryData.journalEntries)
-        
+        mapView.addAnnotations(SharedData.shared.getAllJournalEntries())
         view.backgroundColor = .white
         navigationItem.title = "Loading..."
         locationManager.delegate = self

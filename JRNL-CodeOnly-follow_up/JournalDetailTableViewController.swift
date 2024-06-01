@@ -146,7 +146,6 @@ class JournalDetailTableViewController: UITableViewController {
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            let marginsGuide = cell.contentView.layoutMarginsGuide
             
             cell.contentView.addSubview(imageView)
             imageView.image = journalEntry.photo
@@ -159,7 +158,6 @@ class JournalDetailTableViewController: UITableViewController {
             return cell
         case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            let marginsGuide = cell.contentView.layoutMarginsGuide
             
             cell.contentView.addSubview(mapView)
             

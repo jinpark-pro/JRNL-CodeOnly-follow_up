@@ -28,5 +28,11 @@ class SharedData {
         return readOnlyJournalEntries
     }
     
+    func addJournalEntry(newJournalEntry: JournalEntry) {
+        journalEntries.append(newJournalEntry)
+    }
     
+    func removeJournalEntry(index: Int) {
+        journalEntries.remove(at: index)
+    }
 }
