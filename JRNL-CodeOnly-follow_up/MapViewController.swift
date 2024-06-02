@@ -41,6 +41,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         super.viewIsAppearing(animated)
         locationManager.requestLocation()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        SharedData.shared.loadJournalEntriesData()
+    }
     // MARK: - CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let myCurrentLocation = locations.first {
