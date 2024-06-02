@@ -70,9 +70,10 @@
 			children = (
 				3C1F4F5F2BF7DCB500900A43 /* AppDelegate.swift */,
 				3C1F4F612BF7DCB500900A43 /* SceneDelegate.swift */,
-				3C1F4F7B2BF933D900900A43 /* Journal List Screen */,
+				3C1F4F7B2BF933D900900A43 /* Views */,
 				3C99A66A2BFC0F080000611B /* Model */,
 				3C1F4F772BF930B700900A43 /* JournalDetailTableViewController.swift */,
+				3C1F4F632BF7DCB500900A43 /* JournalListViewController.swift */,
 				3C99A6682BFB83350000611B /* CustomTableViewCell.swift */,
 				3C1F4F752BF8AA1E00900A43 /* AddJournalViewController.swift */,
 				3C1F4F732BF7E16F00900A43 /* MapViewController.swift */,
@@ -83,13 +84,12 @@
 			path = "JRNL-CodeOnly-follow_up";
 			sourceTree = "<group>";
 		};
-		3C1F4F7B2BF933D900900A43 /* Journal List Screen */ = {
+		3C1F4F7B2BF933D900900A43 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3C1F4F632BF7DCB500900A43 /* JournalListViewController.swift */,
 				3C1F4F792BF9336900900A43 /* JournalListTableViewCell.swift */,
 			);
-			path = "Journal List Screen";
+			path = Views;
 			sourceTree = "<group>";
 		};
 		3C99A66A2BFC0F080000611B /* Model */ = {
