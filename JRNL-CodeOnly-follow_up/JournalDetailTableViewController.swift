@@ -76,6 +76,14 @@ class JournalDetailTableViewController: UITableViewController {
         return imageView
     }()
     
+    private lazy var ratingView: RatingView = {
+        let ratingView = RatingView(frame: CGRect(x: 0, y: 0, width: 252, height: 44))
+        ratingView.distribution = .equalSpacing
+        ratingView.isUserInteractionEnabled = false
+        ratingView.translatesAutoresizingMaskIntoConstraints = false
+        return ratingView
+    }()
+    
     init(journalEntry: JournalEntry) {
         self.journalEntry = journalEntry
         super.init(nibName: nil, bundle: nil)
@@ -89,7 +97,6 @@ class JournalDetailTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "customCell")
         navigationItem.title = "Detail"
     }
 
@@ -118,7 +125,14 @@ class JournalDetailTableViewController: UITableViewController {
             ])
             return cell
         case 1:
-            return tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            ratingView.rating = journalEntry.rating
+            cell.contentView.addSubview(ratingView)
+            ratingView.centerXAnchor.constraint(equalTo: cell.contentView.centerXAnchor).isActive = true
+            ratingView.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
+            ratingView.widthAnchor.constraint(equalToConstant: 252).isActive = true
+            ratingView.heightAnchor.constraint(equalToConstant: 44).isActive = true
+            return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             let marginsGuide = cell.contentView.layoutMarginsGuide
