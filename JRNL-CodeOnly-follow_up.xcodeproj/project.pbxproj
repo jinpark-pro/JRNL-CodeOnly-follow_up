@@ -328,6 +328,7 @@
 				INFOPLIST_FILE = "JRNL-CodeOnly-follow_up/Info.plist";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "location always allow";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "location allow when in use";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Allow access photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -356,6 +357,7 @@
 				INFOPLIST_FILE = "JRNL-CodeOnly-follow_up/Info.plist";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "location always allow";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "location allow when in use";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Allow access photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
