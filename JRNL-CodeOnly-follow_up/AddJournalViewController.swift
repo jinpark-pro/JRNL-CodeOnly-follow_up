@@ -38,10 +38,9 @@ class AddJournalViewController: UIViewController, CLLocationManagerDelegate, UIT
     }()
     
     private lazy var ratingView: UIStackView = {
-        let stackView = UIStackView(frame: CGRect(x: 0, y: 0, width: 252, height: 44))
-        stackView.axis = .horizontal
-        stackView.backgroundColor = .systemCyan
-        return stackView
+        let ratingView = RatingView(frame: CGRect(x: 0, y: 0, width: 252, height: 44))
+        ratingView.distribution = .fillEqually
+        return ratingView
     }()
     
     private lazy var toggleView: UIStackView = {
