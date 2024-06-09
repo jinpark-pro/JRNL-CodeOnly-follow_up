@@ -8,6 +8,14 @@
 import UIKit
 
 class RatingView: UIStackView {
+    private var ratingButtons: [UIButton] = []
+    var rating = 0 {
+        didSet {
+            updateButtonSelectionStates()
+        }
+    }
+    private let buttonCount = 5
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupButtons()
@@ -17,9 +25,6 @@ class RatingView: UIStackView {
         super.init(coder: coder)
         setupButtons()
     }
-    
-    private var ratingButtons: [UIButton] = []
-    private let buttonCount = 5
     
     private func setupButtons() {
         self.axis = .horizontal
@@ -41,9 +46,29 @@ class RatingView: UIStackView {
             button.setImage(highlightedStar, for: .highlighted)
             button.setImage(highlightedStar, for: [.highlighted, .selected])
             
+            button.addAction(UIAction { [weak self] _ in
+                guard let self = self else { return }
+                guard let index = ratingButtons.firstIndex(of: button) else {
+                    fatalError("The button \(button), is not in the ratingButtons array: \(self.ratingButtons)")
+                }
+                
+                let selectedRating = index + 1
+                if selectedRating == rating {
+                    rating = 0
+                } else {
+                    rating = selectedRating
+                }
+            }, for: .touchUpInside)
+            
             button.translatesAutoresizingMaskIntoConstraints = false
             addArrangedSubview(button)
             ratingButtons.append(button)
+        }
+    }
+    
+    private func updateButtonSelectionStates() {
+        for (index, button) in ratingButtons.enumerated() {
+            button.isSelected = index < rating
         }
     }
 }
